@@ -1,0 +1,18 @@
+// color variables
+$dark-blue: #0e0b29;
+$deep-purple: #3b0032;
+$lilac: #7d2948;
+$peach: #ebc588;
+$yellow: #ebeaa9;
+
+@keyframes gradient {
+  0% {
+    background-position: 0% 50%;
+  }
+  50% {
+    background-position: 100% 50%;
+  }
+  100% {
+    background-position: 0% 50%;
+  }
+}

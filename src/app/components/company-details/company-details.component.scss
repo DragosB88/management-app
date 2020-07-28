@@ -1,0 +1,55 @@
+.employee-container {
+  list-style: none;
+  display: grid;
+  grid-gap: 1rem;
+  grid-template-columns: repeat(auto-fit, minmax(480px, 1fr));
+  padding-inline-start: 0;
+}
+
+.employee-data {
+  background: #f1f1f1;
+  display: flex;
+  place-items: center;
+  padding: 2rem;
+  &__avatar {
+    background: linear-gradient(-45deg, #ee7752, #e73c7e, #23a6d5, #23d5ab);
+    background-size: 400% 400%;
+    animation: gradient 15s ease infinite;
+    border-radius: 50%;
+  }
+  &__btn {
+    width: 40px;
+    height: 40px;
+    cursor: pointer;
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: 80%;
+    background-color: transparent;
+    border-radius: 5px;
+
+    border: none;
+    padding: 0.625rem;
+    box-shadow: 0 4px 6px rgba(50, 50, 93, 0.11), 0 1px 3px rgba(0, 0, 0, 0.08);
+    transition: all 0.22s;
+    &:hover {
+      box-shadow: 0 7px 14px rgba(50, 50, 93, 0.1),
+        0 3px 6px rgba(0, 0, 0, 0.08);
+      filter: brightness(130%);
+    }
+    &:disabled {
+      opacity: 0.5;
+    }
+  }
+  &__btn-delete {
+    background-image: url("./../../../assets/icons/delete-user.png");
+  }
+  &__btn-edit {
+    background-image: url("./../../../assets/icons/edit-user.png");
+  }
+  &__image-container {
+    flex-grow: 1;
+  }
+  &__info-container {
+    flex-grow: 2;
+  }
+}
