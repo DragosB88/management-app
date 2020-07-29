@@ -31,7 +31,7 @@
     padding: 0.625rem;
     box-shadow: 0 4px 6px rgba(50, 50, 93, 0.11), 0 1px 3px rgba(0, 0, 0, 0.08);
     transition: all 0.22s;
-    &:hover {
+    &:hover:enabled {
       box-shadow: 0 7px 14px rgba(50, 50, 93, 0.1),
         0 3px 6px rgba(0, 0, 0, 0.08);
       filter: brightness(130%);
@@ -44,7 +44,7 @@
     display: inline-flex;
     flex-direction: row;
     justify-content: space-between;
-    width: 100px;
+    width: 90px;
     margin-left: auto;
   }
   &__details-container {
@@ -62,6 +62,8 @@
       overflow: hidden;
       text-overflow: ellipsis;
       color: $base-black;
+      font-family: "Acrelec";
+      font-weight: 700;
     }
   }
   &__details-name {
@@ -74,9 +76,11 @@
   }
   &__btn-delete {
     background-image: url("./../../../assets/icons/delete-user.png");
+    background-color: $medium-orange;
   }
   &__btn-edit {
     background-image: url("./../../../assets/icons/edit-user.png");
+    background-color: $light-orange;
   }
   &__image-container {
     flex-grow: 1;
@@ -84,7 +88,7 @@
       display: inline-flex;
       padding: 3%;
       background: linear-gradient(
-        -45deg,
+        -95deg,
         $dark-orange,
         $medium-orange,
         $light-orange,
