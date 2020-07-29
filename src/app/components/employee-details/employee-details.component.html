@@ -1,1 +1,39 @@
-<p>employee-details works!</p>
+<div class="employee-data">
+  <div class="employee-data__image-container">
+    <div class="employee-data__image-container--border-effect">
+      <img
+        class="employee-data__avatar"
+        src="./../../../assets/icons/user.png"
+      />
+    </div>
+  </div>
+  <div class="employee-data__info-container">
+    <div class="employee-data__details-container">
+      <span
+        class="employee-data__details-name"
+        title="{{ employeeData.FirstName }} {{ employeeData.SecondName }}"
+        ><span class="employee-data__details-first">{{
+          employeeData.FirstName
+        }}</span>
+        {{ employeeData.SecondName }}</span
+      >
+      <span
+        class="employee-data__details-position"
+        title="{{ employeeData.Position }}"
+        >{{ employeeData.Position }}</span
+      >
+    </div>
+    <div class="employee-data__btn-container">
+      <button
+        class="employee-data__btn employee-data__btn-delete"
+        alt="delete"
+        (click)="deleteEmployee()"
+      ></button
+      ><button
+        class="employee-data__btn employee-data__btn-edit"
+        alt="edit"
+        [disabled]="employeeData.Blocked"
+      ></button>
+    </div>
+  </div>
+</div>

@@ -2,42 +2,10 @@
 <span>{{ inputText | titlecasecustom }}</span> -->
 
 <ul class="employee-container">
-  <li class="employee-data" *ngFor="let employee of employeesData">
-    <div class="employee-data__image-container">
-      <div class="employee-data__image-container--border-effect">
-        <img
-          class="employee-data__avatar"
-          src="./../../../assets/icons/user.png"
-        />
-      </div>
-    </div>
-    <div class="employee-data__info-container">
-      <div class="employee-data__details-container">
-        <span
-          class="employee-data__details-name"
-          title="{{ employee.FirstName }} {{ employee.SecondName }}"
-          ><span class="employee-data__details-first">{{
-            employee.FirstName
-          }}</span>
-          {{ employee.SecondName }}</span
-        >
-        <span
-          class="employee-data__details-position"
-          title="{{ employee.Position }}"
-          >{{ employee.Position }}</span
-        >
-      </div>
-      <div class="employee-data__btn-container">
-        <button
-          class="employee-data__btn employee-data__btn-delete"
-          alt="delete"
-        ></button
-        ><button
-          class="employee-data__btn employee-data__btn-edit"
-          alt="edit"
-          [disabled]="employee.Blocked"
-        ></button>
-      </div>
-    </div>
+  <li *ngFor="let employee of employeesData">
+    <employee-details
+      [employeeData]="employee"
+      (deleteEntry)="deletedEmployee($event)"
+    ></employee-details>
   </li>
 </ul>

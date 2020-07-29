@@ -1,0 +1,98 @@
+@import "../../app.component.scss";
+
+.employee-data {
+  background: #f1f1f1;
+  display: flex;
+  place-items: center;
+  padding: 2rem;
+  &__avatar {
+    background-color: #fff;
+    border-radius: 50%;
+  }
+  &__btn {
+    width: 40px;
+    height: 40px;
+    cursor: pointer;
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: 80%;
+    background-color: transparent;
+    border-radius: 5px;
+
+    border: none;
+    padding: 0.625rem;
+    box-shadow: $box-shadow-standard;
+    transition: all 0.22s;
+    &:hover:enabled {
+      box-shadow: $box-shadow-hover;
+      filter: brightness(130%);
+    }
+    &:disabled {
+      opacity: 0.5;
+    }
+  }
+  &__btn-container {
+    display: inline-flex;
+    flex-direction: row;
+    justify-content: space-between;
+    width: 90px;
+    margin-left: auto;
+  }
+  &__details-container {
+    display: flex;
+    place-items: center;
+    width: 240px;
+    padding-left: 20px;
+    padding-right: 20px;
+    box-sizing: border-box;
+    flex-direction: column;
+    align-items: flex-start;
+    span {
+      width: 100%;
+      white-space: nowrap;
+      overflow: hidden;
+      text-overflow: ellipsis;
+      color: $base-black;
+      font-family: "Acrelec";
+      font-weight: 700;
+    }
+  }
+  &__details-name {
+    font-size: 24px;
+    .employee-data__details-first {
+      color: $light-orange;
+    }
+  }
+  &__details-position {
+  }
+  &__btn-delete {
+    background-image: url("./../../../assets/icons/delete-user.png");
+    background-color: $medium-orange;
+  }
+  &__btn-edit {
+    background-image: url("./../../../assets/icons/edit-user.png");
+    background-color: $light-orange;
+  }
+  &__image-container {
+    flex-grow: 1;
+    &--border-effect {
+      display: inline-flex;
+      padding: 3%;
+      background: linear-gradient(
+        -95deg,
+        $dark-orange,
+        $medium-orange,
+        $light-orange,
+        $base-black
+      );
+      background-size: 400% 400%;
+      animation: gradient 15s ease infinite;
+      border-radius: 50%;
+      box-shadow: $box-shadow-standard;
+    }
+  }
+  &__info-container {
+    display: flex;
+    flex-grow: 2;
+  }
+}
