@@ -4,22 +4,40 @@
 <ul class="employee-container">
   <li class="employee-data" *ngFor="let employee of employeesData">
     <div class="employee-data__image-container">
-      <img
-        class="employee-data__avatar"
-        src="./../../../assets/icons/user.png"
-      />
+      <div class="employee-data__image-container--border-effect">
+        <img
+          class="employee-data__avatar"
+          src="./../../../assets/icons/user.png"
+        />
+      </div>
     </div>
     <div class="employee-data__info-container">
-      <span>{{ employee.FirstName }} {{ employee.SecondName }}</span
-      ><button
-        class="employee-data__btn employee-data__btn-delete"
-        alt="delete"
-      ></button
-      ><button
-        class="employee-data__btn employee-data__btn-edit"
-        alt="edit"
-        [disabled]="employee.Blocked"
-      ></button>
+      <div class="employee-data__details-container">
+        <span
+          class="employee-data__details-name"
+          title="{{ employee.FirstName }} {{ employee.SecondName }}"
+          ><span class="employee-data__details-first">{{
+            employee.FirstName
+          }}</span>
+          {{ employee.SecondName }}</span
+        >
+        <span
+          class="employee-data__details-position"
+          title="{{ employee.Position }}"
+          >{{ employee.Position }}</span
+        >
+      </div>
+      <div class="employee-data__btn-container">
+        <button
+          class="employee-data__btn employee-data__btn-delete"
+          alt="delete"
+        ></button
+        ><button
+          class="employee-data__btn employee-data__btn-edit"
+          alt="edit"
+          [disabled]="employee.Blocked"
+        ></button>
+      </div>
     </div>
   </li>
 </ul>
