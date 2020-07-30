@@ -5,6 +5,8 @@
   display: flex;
   place-items: center;
   padding: 2rem;
+  position: relative;
+  overflow: hidden;
   &__avatar {
     background-color: #fff;
     border-radius: 50%;
@@ -53,17 +55,18 @@
       overflow: hidden;
       text-overflow: ellipsis;
       color: $base-black;
-      font-family: "Acrelec";
-      font-weight: 700;
     }
   }
   &__details-name {
     font-size: 24px;
+    font-family: "Roboto";
     .employee-data__details-first {
       color: $light-orange;
     }
   }
   &__details-position {
+    font-family: "Acrelec";
+    font-weight: 700;
   }
   &__btn-delete {
     background-image: url("./../../../assets/icons/delete-user.png");
@@ -75,6 +78,7 @@
   }
   &__image-container {
     flex-grow: 1;
+    z-index: 1;
     &--border-effect {
       display: inline-flex;
       padding: 3%;
@@ -94,5 +98,14 @@
   &__info-container {
     display: flex;
     flex-grow: 2;
+    z-index: 1;
+  }
+  &__background-figure {
+    width: 100%;
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    opacity: 0.5;
+    z-index: 0;
   }
 }

@@ -9,17 +9,32 @@ import { ManagementEmployeesService } from '../../services/management-employees.
 export class CompanyDetailsComponent implements OnInit {
   employeesData;
   constructor(ManagementEmployeesService: ManagementEmployeesService) {
+    // get data from service
     this.employeesData = ManagementEmployeesService.getEmployees();
+    // sort alphabetically
+    this.employeesData = this.sortAlphabetically(this.employeesData);
     console.log('Data ', this.employeesData);
   }
+
+  sortAlphabetically(array) {
+    return array.sort(function (a, b) {
+      if (a.FirstName < b.FirstName) {
+        return -1;
+      }
+      if (a.FirstName > b.FirstName) {
+        return 1;
+      }
+      return 0;
+    });
+  }
+
   deletedEmployee(ev) {
+    // check if user has been marked for deletion
     if (ev.deleted) {
-      console.log('the user with the id ', ev.id, ' has been deleted.');
+      // delete user
       this.employeesData = this.employeesData.filter((obj) => {
-        console.log('obj.id ', obj.Id, 'ev.id ', ev.id);
         return obj.Id !== ev.id;
       });
-      console.log('new array ', this.employeesData);
     }
   }
   ngOnInit(): void {}
