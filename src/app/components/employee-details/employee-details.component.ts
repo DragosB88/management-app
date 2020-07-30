@@ -20,5 +20,8 @@ export class EmployeeDetailsComponent implements OnInit {
     console.log('CODE: ', code);
     this.deleteEntry.emit(code);
   }
+  editEmployee(employee) {
+    console.log('edit employee ', employee);
+  }
   ngOnInit(): void {}
 }

@@ -1,11 +1,19 @@
 <!-- <input type="text" [(ngModel)]="inputText" (keyup)="inputKeyDown()" /><br />
 <span>{{ inputText | titlecasecustom }}</span> -->
 
-<ul class="employee-container">
-  <li *ngFor="let employee of employeesData">
-    <employee-details
-      [employeeData]="employee"
-      (deleteEntry)="deletedEmployee($event)"
-    ></employee-details>
-  </li>
-</ul>
+<header>
+  <h2>Our Company</h2>
+  <p>Lorem Ipsum dolor sit amet</p>
+</header>
+<div class="employee-list-container">
+  <h4>Employees List</h4>
+  <input class="employee-search" type="search" placeholder="Search" />
+  <ul class="employee-container">
+    <li *ngFor="let employee of employeesData">
+      <employee-details
+        [employeeData]="employee"
+        (deleteEntry)="deletedEmployee($event)"
+      ></employee-details>
+    </li>
+  </ul>
+</div>

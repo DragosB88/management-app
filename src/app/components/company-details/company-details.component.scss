@@ -1,9 +1,44 @@
 @import "../../app.component.scss";
 
+header {
+  padding: 20px 50px;
+  background: $base-grey;
+  border-bottom: 2px solid $light-orange;
+  h2 {
+    font-family: "Acrelec";
+    color: $light-orange;
+    font-weight: 700;
+    font-size: 38px;
+    margin-block-end: 0;
+  }
+  p {
+    font-family: "Roboto";
+  }
+}
+
+.employee-list-container {
+  h4 {
+    font-family: "Roboto";
+    font-weight: bold;
+    font-size: 22px;
+    margin-block-end: 0.4em;
+  }
+}
+
 .employee-container {
   list-style: none;
   display: grid;
   grid-gap: 1rem;
   grid-template-columns: repeat(auto-fit, minmax(480px, 1fr));
   padding-inline-start: 0;
+}
+
+.employee-search {
+  width: 100%;
+  padding: 15px;
+  border: none;
+  font-size: 16px;
+  font-family: "Acrelec";
+  font-weight: 600;
+  box-shadow: $box-shadow-standard;
 }
